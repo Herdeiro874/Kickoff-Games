@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="  ../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/styles/conta.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+<body class="b">
+
+<div class='container'>
+  <div class='card'>
+    <h1> Entrar </h1>
+    
+    <div id='msgError'></div>
+    
+    <div class='label-float'>
+      <input type='text' id='usuario' paceholder='' required>
+      <label id='userLabel' for='usuario'>Email</label>
+    </div>
+    
+    <div class='label-float'>
+      <input type='password' id='senha' paceholder='' required>
+      <label id='senhaLabel' for='senha'>Senha</label>
+      <i class="fa fa-eye" aria-hidden="true"></i>
+    </div>
+    
+    <div class='justify-center'>
+      <button onclick='entrar()'>Entrar</button>
+    </div>
+    
+    <div class='justify-center'>
+      <hr>
+    </div>
+    
+    <div class="espacin">
+      <p> Não tem uma conta?
+        <a href="/login/cadastro/"> Cadastre-se </a>
+      </p>
+    </div>
+    <div class="espacin">
+      <p> Não quer fazer login?
+        <a href="/">Página Inicial</a>
+      </p>
+    </div>
+    
+  </div>
+  </div>
+  <script  src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/conta.js"></script>
+<script> btnCadastrar.onclick = function (){
+	entrar();
+	}
+	
+</script>
+</body>
+</html>

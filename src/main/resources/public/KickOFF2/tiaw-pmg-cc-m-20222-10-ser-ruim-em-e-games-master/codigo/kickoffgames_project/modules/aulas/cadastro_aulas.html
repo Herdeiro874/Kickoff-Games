@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kickoff Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/styles/estilos.css">
+
+</head>
+
+
+<body class="b" onload= 'logado()'>
+    <header class="container header">
+        <a href="/"><img src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/imagens/Logo.png" class="logo"></a>
+
+        <div class="container_nav">
+
+            <nav class="nav menu1">
+                <a class="nav-link" href="/">Menu</a>
+                <a class="nav-link" href="/dicas/dicas/">Adicionar Vídeo</a>
+                <a class="nav-link" href="/usuario/usuario/">Cadastrar Usuário</a>
+                <a class="nav-link nav" href="/login/login/" onclick='sair()'>Logout</a>
+                <div class="barra">
+                    <form class="form-inline ">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+
+                    </form>
+                </div>
+
+                <span class="spadim" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </nav>
+
+        </div>
+
+    </header>
+
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/perfil/">Perfil</a>
+        <a href="/meta/meta/">Metas</a>
+        <a href="/aulas/listar/2">Valorant</a>
+        <a href="/aulas/listar/1">League</a>
+        <a class="bottom" href="/login/login/" onclick='sair()'>Logout</a>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <main class="container main">
+
+        <div>
+            <h1 class="nome">Kickoff Games</h1>
+        </div>
+
+        <section class="row aulas">
+            <div id="formDicasLOL">
+
+                <h3 class="espaco">Adicionar Dica</h3>
+                <div class="row">
+
+                    <div class="col-4 arruma">
+                        <h5 class="">Habilidade:</h5>
+                        <input type="text" id="campoHabilidade" name="habilidade">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5 class="">Categoria:</h5>
+                        <input type="text" id="campoCategoria" name="categoria">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5 class="">Mídia:</h5>
+                        <input type="text" id="campoMidia" name="midia">
+                    </div>
+                    <div>
+                        <div class="col-6 arruma">
+                            <h5 class="">Jogo:</h5>
+                            <select id="campoJogo" name="jogo">
+
+                                <option value="0" selected>Selecione...</option>
+                                <option value="1">LoL</option>
+                                <option value="2">Valorant</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-6 arruma">
+                            <h5 class="">Dificuldade:</h5>
+                            <select id="campoDificuldade" name="dificuldade">
+
+                                <option value="0" selected>Selecione...</option>
+                                <option value="1">Iniciante</option>
+                                <option value="2">Intermediário</option>
+                                <option value="3">Avançado</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-6 arruma">
+                            <h5 class="">Nota:</h5>
+                            <select id="campoNota" name="nota">
+
+                                <option value="0" selected>Selecione...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="col-4 arruma">
+                        <div id="descricao" class="col-12">
+                            <h5>Descrição:</h5>
+                            <textarea id="campoDescricao" name="descricao" rows="6" cols="50"></textarea><br>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="confirma"></div>
+
+                <button id="botaoSalvar"  class="btn btn-primary">Adicionar</button>
+                <button id="botaoAlterar" class="btn btn-primary">Editar</button>
+                <button id="botaoApagar" class="btn btn-primary">Apagar</button>
+                </div>
+
+        </section>
+
+
+
+        <section id = "catAulas" class="transp"> <LOLAULAS> </section>
+           
+
+
+    </main>
+
+    <footer class="container footer">
+        <div class="Copyright">
+            <p>Copyright 2022 - Kickoff Games - ICEI Puc Minas.</p>
+        </div>
+    </footer>
+
+
+    <script src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/aulas.js"></script>
+    <script  src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/conta.js"></script>
+      <script>
+
+   botaoSalvar.onclick = function () {
+      
+     let descricao = window.document.getElementById('campoDescricao');
+      let nota = window.document.getElementById('campoNota');
+      let habilidade = window.document.getElementById('campoHabilidade');
+      let jogo = window.document.getElementById('campoJogo');
+      let midia = window.document.getElementById('campoMidia');
+      let categoria = window.document.getElementById('campoCategoria');
+      let dificuldade = window.document.getElementById('campoDificuldade');
+
+ 
+ if (document.getElementById("campoDificuldade").value == 1) {
+        dificuldade = "Iniciante";
+    } else if (document.getElementById("campoDificuldade").value == 2) {
+        dificuldade = "Intermediário";
+    } else if (document.getElementById("campoDificuldade").value == 3) {
+        dificuldade = "Avançado";
+    }
+
+    if (document.getElementById("campoJogo").value == 1) {
+        jogo = "LOL";
+    } else if (document.getElementById("campoJogo").value == 2) {
+        jogo = "Valorant";
+    }
+
+    if (document.getElementById("campoNota").value == 1) {
+        nota = "1";
+    } else if (document.getElementById("campoNota").value == 2) {
+        nota = "2";
+    } else if (document.getElementById("campoNota").value == 3) {
+        nota = "3";
+    } else if (document.getElementById("campoNota").value == 4) {
+        nota = "4";
+    } else nota = "5";
+ 
+      let campos = {
+         'descricao': descricao.value,
+         'nota': nota.value,		  
+         'habilidade': habilidade.value,
+         'jogo': jogo.value,
+         'midia': midia.value,
+         'categoria': categoria.value,
+         'dificuldade': dificuldade.value
+      } 
+
+      var url = "/dicas/insert/"
+
+      fetch(url, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(campos)
+      }).then(respose => console.log(respose))
+      .then(data => console.log(data))
+      .catch(erro => console.log(erro))
+      
+      cadastrar();
+      
+   }
+
+
+   function submit(){
+
+      let descricao = window.document.getElementById('campoDescricao');
+      let nota = window.document.getElementById('campoNota');
+      let habilidade = window.document.getElementById('campoHabilidade');
+      let jogo = window.document.getElementById('campoJogo');
+      let midia = window.document.getElementById('campoMidia');
+      let categoria = window.document.getElementById('campoCategoria');
+      let dificuldade = window.document.getElementById('campoDificuldade');
+
+ 
+ if (document.getElementById("campoDificuldade").value == 1) {
+        dificuldade = "Iniciante";
+    } else if (document.getElementById("campoDificuldade").value == 2) {
+        dificuldade = "Intermediário";
+    } else if (document.getElementById("campoDificuldade").value == 3) {
+        dificuldade = "Avançado";
+    }
+
+    if (document.getElementById("campoJogo").value == 1) {
+        jogo = "LOL";
+    } else if (document.getElementById("campoJogo").value == 2) {
+        jogo = "Valorant";
+    }
+
+    if (document.getElementById("campoNota").value == 1) {
+        nota = "1";
+    } else if (document.getElementById("campoNota").value == 2) {
+        nota = "2";
+    } else if (document.getElementById("campoNota").value == 3) {
+        nota = "3";
+    } else if (document.getElementById("campoNota").value == 4) {
+        nota = "4";
+    } else nota = "5";
+ 
+      let campos = {
+         'descricao': descricao.value,
+         'nota': nota.value,		  
+         'habilidade': habilidade.value,
+         'jogo': jogo.value,
+         'midia': midia.value,
+         'categoria': categoria.value,
+         'dificuldade': dificuldade.value
+      }
+
+      var url = "localhost:5501/" + "dicas/insert/"
+
+      var xhttp = new HMLHttpRequest();
+      xhttp.open("POST", url, campos);
+      xhttp.send();
+      
+    
+        
+      
+   }
+  </script>
+
+</body>
+  
+
+</html>
