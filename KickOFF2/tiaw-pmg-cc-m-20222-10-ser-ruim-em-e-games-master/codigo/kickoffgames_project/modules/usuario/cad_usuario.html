@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="  ../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/styles/conta.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body class="b">
+
+<div class='container'>
+  <div class='card'>
+    <h1> Cadastrar </h1>
+    
+    <div id='msgError'></div>
+    <div id='msgSuccess'></div>
+    
+<form class="form--register" action="/login/insert/" method="post" id="form-add">
+	<input type="hidden" id="msg" name="msg" value="">
+            <div class="label-float">
+               <input  name="email" type="text" id="usuario" placeholder=" " required>
+               <label id="labelUsuario" for="usuario">Email </label>
+            </div>
+            
+            <div class="label-float">
+               <input name="senha" type="password" id="senha" placeholder=" " required>
+               <label id="labelSenha" for="senha">Senha</label>
+               
+            </div>
+
+            <div class="label-float">
+               <input type="password" id="confirmSenha" placeholder=" " required>
+               <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
+            </div>
+            </form>
+            
+            <div class='justify-center'>
+               <button id="btnCadastrar">Cadastrar</button>
+            </div>
+            <div class="espacin">
+               <p> Já tem uma conta?
+                  <a href="/login/login/"> Faça Login </a>
+               </p>
+            </div>
+            <div class="espacin">
+               <p> Não quer fazer login?
+                 <a href="/">Página Inicial</a>
+               </p>
+             </div>
+
+
+        
+          <script  src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/bot.js"></script>
+    
+  </div>
+  </div>
+
+  <script>
+
+   btnCadastrar.onclick = function () {
+      let email = window.document.getElementById('usuario');
+      let senha = window.document.getElementById('senha');
+      let campos = {
+         'email': email.value,
+         'senha': senha.value
+      }
+
+      var url = "/login/insert/"
+
+      fetch(url, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(campos)
+      }).then(respose => console.log(respose))
+      .then(data => console.log(data))
+      .catch(erro => console.log(erro))
+      
+      cadastrar();
+      
+   }
+
+
+   function submit(){
+      let email = window.document.getElementById('usuario');
+      let senha = window.document.getElementById('senha');
+      let campos = {
+         'email': email.value,
+         'senha': senha.value
+      }
+
+      var url = "localhost:5501/" + "login/insert/"
+
+      var xhttp = new HMLHttpRequest();
+      xhttp.open("POST", url, campos);
+      xhttp.send();
+      
+    
+        
+      
+   }
+  </script>
+  <script  src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/conta.js"></script>
+</form> 
+</body>
+</html>

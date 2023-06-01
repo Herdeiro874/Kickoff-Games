@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kickoff Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/styles/estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="../../assets/scripts/aulas.js"></script>
+</head>
+
+
+
+<body class="a">
+
+
+
+    <header class="container header">
+        <a href="/"><img src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/imagens/Logo.png" class="logo"></a>
+
+        <div class="container_nav">
+
+            <nav class="nav menu1">
+                <a class="nav-link" href="/">Menu</a>
+                <a class="nav-link" href="/dicas/dicas/">Adicionar Vídeo</a>
+                <a class="nav-link" href="/usuario/usuario/">Cadastrar Usuário</a>
+                <a class="nav-link nav" href="#">Sobre Nós</a>
+                <div class="barra">
+                    <form class="form-inline ">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+
+                    </form>
+                </div>
+
+                <span class="spadim" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/perfil/">Perfil</a>
+        <a href="/meta/meta/">Metas</a>
+        <a href="/aulas/listar/2">Valorant</a>
+        <a href="/aulas/listar/1">League</a>
+        <a class="bottom" href="/login/login/" onclick='sair()'>Logout</a>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <main class="container main">
+
+        <div>
+            <h1 class="nome">Kickoff Games</h1>
+        </div>
+
+        <section class="aulas">
+            <div class="col-10">
+                <h1>Aulas</h1>
+            </div>
+
+
+
+            <section class="aulas_card">
+
+                <!--aqui começa as aulas-->
+
+
+                <div id="aulasval">
+					<LOLAULAS>
+				</div>
+                <script>
+                    let tela = document.getElementById("aulasval");
+                    let strHtml = "";
+                    let objDados = leDados();
+                    for (i = 0; i < objDados.dicas.length; i++) {
+                        if (objDados.dicas[i].jogo == "Valorant") {
+                            if (!objDados.dicas[i].lapide) {
+                                strHtml += `<div class="col-12">
+                        <p><h3><b>${objDados.dicas[i].habilidade}</b></h3></p>
+                            <p><b>Categoria: </b>${objDados.dicas[i].categoria}</p>
+                            <p><b>Dificuldade: </b>${objDados.dicas[i].dificuldade}</p>
+                            <p><b>Descrição: </b>${objDados.dicas[i].descricao}</p>
+                    <div>
+                     <iframe width="1000" height="500" src="https://www.youtube.com/embed/${objDados.dicas[i].urlmidia}" frameborder="0"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                    allowfullscreen></iframe>
+                     </div>
+                    </div>`
+                            }
+                        }
+                    }
+                    tela.innerHTML = strHtml;
+
+
+                </script>
+            </section>
+
+
+ <button class="open-button" onclick="openForm()">Chat</button>
+
+        <div class="chat-popup" id="myForm">
+            <div class="form-container">
+
+                <h2>Assistente Digital</h2>
+
+                <div id="chat" class="chat col-12">
+                    <div id="messages" class="messages"></div>
+                    <input id="input" type="text" placeholder="Como posso lhe ajudar..." autocomplete="off" autofocus="true" class="mar" />
+                    
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+    
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+    
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+
+
+
+    </main>
+
+    <footer class="container footer">
+        <div class="Copyright">
+            <p>Copyright 2022 - Kickoff Games - ICEI Puc Minas.</p>
+        </div>
+    </footer>
+  <script  src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/bot.js"></script>
+    <script src="../../assets/scripts/aulas.js"></script>
+
+</body>
+
+
+</html>

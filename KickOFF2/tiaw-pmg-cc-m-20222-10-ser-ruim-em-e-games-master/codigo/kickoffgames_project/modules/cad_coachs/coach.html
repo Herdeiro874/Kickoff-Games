@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kickoff Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script  src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/scripts/conta.js"></script>
+    <link rel="stylesheet" href="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/styles/estilos.css">
+</head>
+
+
+<body class="b" onload='logado()'>
+
+
+
+    <header class="container header">
+       <a href="/"><img src="../../../../KickOFF2/tiaw-pmg-cc-m-20222-10-ser-ruim-em-e-games-master/codigo/kickoffgames_project/assets/imagens/Logo.png" class="logo"></a>
+
+        <div class="container_nav">
+
+            <nav class="nav menu1">
+                <a class="nav-link" href="/">Menu</a>
+                <a class="nav-link" href="/dicas/dicas/">Adicionar Vídeo</a>
+                <a class="nav-link" href="/usuario/usuario/">Cadastrar Usuário</a>
+                <a class="nav-link nav" href="/login/login/" onclick='sair()'>Logout</a>
+                <div class="barra">
+                    <form class="form-inline ">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+
+                    </form>
+                </div>
+
+
+                <span class="spadim" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/perfil/">Perfil</a>
+        <a href="/meta/meta/">Metas</a>
+        <a href="/aulas/listar/2">Valorant</a>
+        <a href="/aulas/listar/1">League</a>
+        <a class="bottom" href="/login/login/" onclick='sair()'>Logout</a>
+    </div>
+    
+        <div id="menuEditar" class="menueditar">
+		<div class="center">
+			<button  href="javascript:void(0)" class="closebtn btn btn-primary" onclick="CloseMenu()">Fechar</button>
+			<button id="botaoEditar2" class="closebtn btn btn-primary btndentro"  >Editar</button>
+			<button id="botaoDeletar" class="closebtn btn btn-primary btndentro" >Apagar</button>
+        <div class="espacinho">
+        	<p class="center">ID:</p>
+			<input type="text" class="center" id="campoID" o name="id">	
+			</div>    
+	    </div>
+	                   <div class="row">
+
+                    <div class="col-4 arruma">
+                        <h5>Jogo:</h5> <select id="campoJogo2" name="jogo">
+                            <option value="0" selected>Selecione...</option>
+                            <option value="1">LOL</option>
+                            <option value="2">Valorant</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Email cadastrado:</h5>
+                        <input type="text" id="campoEmail2" name="email">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Nickname:</h5>
+                        <input type="text" id="campoNick2" name="nick">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Função:</h5>
+                        <select id="campoFuncao2" name="funcao">
+
+                            <option value="0" selected>Selecione...</option>
+                            <option value="1">Aluno</option>
+                            <option value="2">Coach</option>
+
+                        </select><br>
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Elo:</h5>
+                        <input type="text" id="campoElo2" name="elo">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Discord:</h5>
+                        <input type="text" id="campoDiscord2" name="discord">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Avatar:</h5> <select id="campoAvatar2" name="avatar">
+                            <option value="0" selected>Default</option>
+                            <option value="1">Moai</option>
+                            <option value="2">SusFace</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Apresentação:</h5>
+                        <textarea id="campoDescricao2" name="descricao" rows="6" cols="50"></textarea><br>
+                    </div>
+
+                </div> 
+        
+         </div> 
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+                function openMenu(){
+			document.getElementById("menuEditar").style.width = "100%";
+		}
+		function CloseMenu(){
+			document.getElementById("menuEditar").style.width = "0";
+		}
+    </script>
+
+    <main class="container main">
+
+        <div>
+            <h1 class="nome">Kickoff Games</h1>
+        </div>
+
+        <section class="row aulas">
+
+            <div id="formMembro">
+
+                <h3 class="espaco">Adicionar Membro</h3>
+
+                <div class="row">
+
+                    <div class="col-4 arruma">
+                        <h5>Jogo:</h5> <select id="campoJogo" name="jogo">
+                            <option value="0" selected>Selecione...</option>
+                            <option value="1">LOL</option>
+                            <option value="2">Valorant</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Email cadastrado:</h5>
+                        <input type="text" id="campoEmail" name="email">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Nickname:</h5>
+                        <input type="text" id="campoNick" name="nick">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Função:</h5>
+                        <select id="campoFuncao" name="funcao">
+
+                            <option value="0" selected>Selecione...</option>
+                            <option value="1">Aluno</option>
+                            <option value="2">Coach</option>
+
+                        </select><br>
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Elo:</h5>
+                        <input type="text" id="campoElo" name="elo">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Discord:</h5>
+                        <input type="text" id="campoDiscord" name="discord">
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Avatar:</h5> <select id="campoAvatar" name="avatar">
+                            <option value="0" selected>Default</option>
+                            <option value="1">Moai</option>
+                            <option value="2">SusFace</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4 arruma">
+                        <h5>Apresentação:</h5>
+                        <textarea id="campoDescricao" name="descricao" rows="6" cols="50"></textarea><br>
+                    </div>
+
+                </div>
+
+
+
+                <div id="confirma"></div>
+
+
+                <button id="botaoSalvar" class="btn btn-primary">Adicionar</button>
+                <button id="botaoAlterar" class="btn btn-primary" onclick="openMenu()" >Editar/Apagar</button>
+
+            </div>
+        </section>
+
+
+
+        <section id="catJogadores" class="transp"><LOLAULAS></section>
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+        <div class="chat-popup" id="myForm">
+            <div class="form-container">
+
+                <h2>Assistente Digital</h2>
+
+                <div id="chat" class="chat col-12">
+                    <div id="messages" class="messages"></div>
+                    <input id="input" type="text" placeholder="Como posso lhe ajudar..." autocomplete="off" autofocus="true" class="mar" />
+                    
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+    
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+    
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+
+    </main>
+
+    <footer class="container footer">
+        <div class="Copyright">
+            <p>Copyright 2022 - Kickoff Games - ICEI Puc Minas.</p>
+        </div>
+    </footer>
+
+
+    <script src="../../assets/scripts/cadcoach.js"></script>
+    <script>
+
+	
+	botaoDeletar.onclick = function(){
+		
+	let id = window.document.getElementById('campoID').value;
+	      let campos = {
+		  'id':id
+		  }
+		  console.log(campos);
+		  
+		  var url = "/usuario/delete/" ;
+
+      fetch(url, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(campos)
+      }).then(respose => console.log(respose))
+      .then(data => console.log(data))
+      .catch(erro => console.log(erro))
+ 
+	}
+
+   botaoEditar2.onclick = function(){
+	   
+	  let id = window.document.getElementById('campoID').value;
+      let email = window.document.getElementById('campoEmail2');
+      let nick = window.document.getElementById('campoNick2');
+      let funcao = window.document.getElementById('campoFuncao2');
+      let elo = window.document.getElementById('campoElo2');
+      let discord = window.document.getElementById('campoDiscord2');
+      let descricao = window.document.getElementById('campoDescricao2');
+      let lapide = false;
+
+      
+
+     
+    let avatar = "";
+    let jogo = "";
+
+    if (document.getElementById("campoJogo").value == 1) {
+        jogo = "LOL";
+    } else if (document.getElementById("campoJogo").value == 2) {
+        jogo = "Valorant";
+    }
+
+    if (document.getElementById("campoAvatar").value == 0) {
+        avatar = "default";
+    } else if (document.getElementById("campoAvatar").value == 1) {
+        avatar = "Moai";
+    } else  {
+        avatar = "SusFace";
+    } 
+    
+        if (document.getElementById("campoFuncao").value == 1) {
+        funcao = "Aluno";
+    } else if (document.getElementById("campoFuncao").value == 2) {
+        funcao = "Coach";
+    } 
+
+
+ 
+      let campos = {
+		  'id':id,
+		  'jogo':jogo,
+         'email': email.value,
+         'nick': nick.value,		  
+         'funcao': funcao.value,
+         'elo': elo.value,
+         'discord': discord.value,
+         'avatar': avatar,
+         'descricao': descricao.value,
+         'lapide':lapide,
+      } 
+      console.log(campos);
+
+      var url = "/usuario/update/:" + id
+  
+      fetch(url, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(campos)
+      }).then(respose => console.log(respose))
+      .then(data => console.log(data))
+      .catch(erro => console.log(erro))
+	   
+   }
+   
+   
+
+   botaoSalvar.onclick = function () {
+	  let id = 2;
+      let email = window.document.getElementById('campoEmail');
+      let nick = window.document.getElementById('campoNick');
+      let funcao = window.document.getElementById('campoFuncao');
+      let elo = window.document.getElementById('campoElo');
+      let discord = window.document.getElementById('campoDiscord');
+      let descricao = window.document.getElementById('campoDescricao');
+      let lapide = false;
+
+      
+
+     
+    let avatar = "";
+    let jogo = "";
+
+    if (document.getElementById("campoJogo").value == 1) {
+        jogo = "LOL";
+    } else if (document.getElementById("campoJogo").value == 2) {
+        jogo = "Valorant";
+    }
+
+    if (document.getElementById("campoAvatar").value == 0) {
+        avatar = "default";
+
+    } else if (document.getElementById("campoAvatar").value == 1) {
+        avatar = "Moai";
+
+    } else {
+        avatar = "SusFace";
+    } 
+    
+        if (document.getElementById("campoFuncao").value == 1) {
+        funcao = "Aluno";
+    } else if (document.getElementById("campoFuncao").value == 2) {
+        funcao = "Coach";
+    } 
+
+
+ 
+      let campos = {
+		  'id':id,
+		  'jogo':jogo,
+         'email': email.value,
+         'nick': nick.value,		  
+         'funcao': funcao,
+         'elo': elo.value,
+         'discord': discord.value,
+         'avatar': avatar,
+         'descricao': descricao.value,
+         'lapide':lapide,
+      } 
+      console.log(campos);
+
+      var url = "/usuario/insert/";
+  
+      fetch(url, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(campos)
+      }).then(respose => console.log(respose))
+      .then(data => console.log(data))
+      .catch(erro => console.log(erro))
+      
+    
+
+   }
+
+
+   function submit(){
+	   
+      let id = 1;
+      let email = window.document.getElementById('campoEmail');
+      let nick = window.document.getElementById('campoNick');
+      let funcao = window.document.getElementById('campoFuncao');
+      let elo = window.document.getElementById('campoElo');
+      let discord = window.document.getElementById('campoDiscord');
+      let descricao = window.document.getElementById('campoDescricao');
+      let lapide = false;
+
+      
+
+
+    let avatar = "";
+    let jogo = "";
+
+    if (document.getElementById("campoJogo").value == 1) {
+        jogo = "LOL";
+    } else if (document.getElementById("campoJogo").value == 2) {
+        jogo = "Valorant";
+    }
+
+    if (document.getElementById("campoAvatar").value == 1) {
+        avatar = "default";
+    } else if (document.getElementById("campoAvatar").value == 2) {
+        avatar = "Moai";
+    } else if (document.getElementById("campoAvatar").value == 3) {
+        avatar = "SusFace";
+    } 
+ 
+      let campos = {
+		  'id':id,
+		  'jogo':jogo,
+         'email': email.value,
+         'nick': nick.value,		  
+         'funcao': funcao.value,
+         'elo': elo.value,
+         'discord': discord.value,
+         'avatar': avatar,
+         'descricao': descricao,
+         'lapide':lapide,
+      } 
+ 
+       console.log(campos);
+
+      var url = "localhost:5501/" + "usuario/insert/"
+
+      var xhttp = new HMLHttpRequest();
+      xhttp.open("POST", url, campos);
+      xhttp.send();
+      
+    
+        
+    
+   }
+  </script>
+
+
+</body>
+
+
+</html>
